@@ -1,0 +1,38 @@
+Grid
+	- cellWidth
+	- cellHeight
+	- getCell(x, y)
+	- postStateRules
+
+Cell
+	- x
+	- y
+	- states
+	- addState
+	- removeState
+
+// Visual Components
+GridRenderer
+	- grid {Grid}
+	- renderRules {[i] = RenderRule}
+	- widgets {[i] = Widget}
+	- coveredCells {[x][y] = Widget}
+	- renderCell(x, y)
+	- addWidget(widget)
+	- removeWidget(widget)
+
+RenderRule
+	- onNewState(cell, state)
+	- onStateChange(cell, state)
+	- onRemoveState(cell, state)
+	- onRender(cell)
+
+// Logical Components
+CellState
+	- name
+
+CellStateRule
+	- name
+	- onNewState(cell, state)
+	- onStateChange(cell, state)
+	- onRemoveState(cell, state)
